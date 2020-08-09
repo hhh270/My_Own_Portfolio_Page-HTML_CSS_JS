@@ -9,7 +9,7 @@ font-family: 'Open Sans', sans-serif; */
   --color-dark-white: #bdbdbd;
   --color-pink: #fe918d;
   --color-dark-pink: #ff6863;
-  --color-dark-grey: #4d4d4d;
+  --color-dark-grey: #424242;
   --color-grey: #616161;
   --color-light-grey: #7c7979;
   --color-blue: #84b1cf;
@@ -32,6 +32,10 @@ font-family: 'Open Sans', sans-serif; */
 
   /* size */
   --size-border-radius: 4px;
+
+  /* animation */
+  --animation-duration: 0.3s;
+  /* animation duration은 : 0.25~0.30이 적절한 수치 */
 }
 
 /* Universal tags */
@@ -107,7 +111,7 @@ p {
   background-color: var(--color-blue);
   color: var(--color-white);
   align-items: center;
-  padding: 4px 16px;
+  padding: 0px 16px;
 }
 
 .navbar__menu {
@@ -115,15 +119,16 @@ p {
 }
 
 .navbar__logo {
-  font-size: var(--font-medium);
+  font-size: var(--font-regular);
   font-weight: var(--weight-semi-bold);
 }
 
 .navbar__menu__item {
-  padding: 4px 12px;
+  padding: 5px 12px;
   margin: 0 4px;
   cursor: pointer;
   border-radius: var(--size-border-radius);
+  font-size: var(--font-small);
   font-weight: var(--weight-semi-bold);
 }
 
@@ -133,6 +138,15 @@ p {
 
 .navbar__menu__item:hover {
   background-color: var(--color-darkblue);
+}
+
+/* Section common */
+.section {
+  padding: 35px;
+  text-align: center;
+  max-width: 1200px;
+  margin: auto;
+  /* margin: auto를 통해 좌우여백 균등하게 배분 */
 }
 
 /* home */
@@ -165,4 +179,68 @@ p {
 }
 .home__contact:hover {
   background-color: var(--color-darkblue);
+}
+
+/* About me */
+.about__majors {
+  display: flex;
+  justify-content: space-between;
+  margin: 80px 20px;
+}
+
+.major__icon {
+  height: 170px;
+  width: 170px;
+  font-size: 80px;
+  color: var(--color-darkblue);
+  margin: auto;
+  line-height: 170px;
+  /* line-height를 설정하면 자동으로 중간에 오게된다. */
+  border-radius: 50%;
+  border: 4px solid var(--color-darkblue);
+  /* background-color: yellow; */
+  /* 색을 넣는 것은 임시 확인용. */
+  margin-bottom: 20px;
+  cursor: pointer;
+}
+
+.major__icon:hover i {
+  color: var(--color-pink);
+  transform: rotate(+12deg) scale(1.05);
+  transition: all ease var(--animation-duration);
+}
+
+.major__title {
+  font-size: var(--font-regular);
+  font-weight: var(--weight-bold);
+  color: var(--color-dark-grey);
+}
+.major__description {
+  font-size: var(--font-small);
+  font-weight: var(--weight-semi-bold);
+  color: var(--color-dark-grey);
+}
+
+.job {
+  display: flex;
+  align-items: center;
+}
+
+.job__description {
+  margin: 0 16px;
+  text-align: left;
+}
+
+.job__name,
+.job__period {
+  color: var(--color-dark-grey);
+}
+
+.job__name {
+  font-weight: var(--weight-semi-bold);
+  font-size: var(--font-small);
+}
+
+.job__period {
+  font-size: var(--font-micro);
 }
