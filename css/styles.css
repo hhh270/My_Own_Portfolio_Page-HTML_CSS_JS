@@ -189,6 +189,14 @@ p {
   color: var(--color-white);
 }
 
+.home__title {
+  text-shadow: 2px 4px 6px var(--color-dark-grey);
+}
+
+.home__description {
+  text-shadow: 2px 2px 2px var(--color-grey);
+}
+
 .home__contact {
   margin-top: 10px;
   padding: 8px 10px;
@@ -200,6 +208,7 @@ p {
 }
 .home__contact:hover {
   background-color: var(--color-darkblue);
+  text-shadow: 0px 2px 1px var(--color-grey);
 }
 
 /* About me */
@@ -428,6 +437,26 @@ p {
   opacity: 0;
   color: var(--color-white);
   transform: translateY(10px);
+}
+
+.project__link {
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
+  margin: 20px 60px;
+  font-size: var(--font-micro);
+}
+
+.project__link__contents {
+  color: var(--color-light-white);
+  border-bottom: 1.5px solid var(--color-grey);
+  width: 85px;
+  height: 30px;
+  line-height: 26px;
+}
+
+.project__link__contents:hover {
+  border-bottom: 1.5px solid var(--color-orange);
 }
 
 .project__description h3 {
