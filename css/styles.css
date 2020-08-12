@@ -7,6 +7,7 @@ font-family: 'Open Sans', sans-serif; */
   --color-white: #ffffff;
   --color-light-white: #eeeeee;
   --color-dark-white: #d8d8d8;
+  --color-light-pink: #fcadaa;
   --color-pink: #fe918d;
   --color-dark-pink: #ff6863;
   --color-dark-grey: #424242;
@@ -15,6 +16,7 @@ font-family: 'Open Sans', sans-serif; */
   --color-blue: #84b1cf;
   --color-darkblue: #539ecf;
   --color-navy: #090a55;
+  --color-navy-hover: #090a55a8;
   --color-yellow: #fff7d1;
   --color-orange: #feb546;
   --color-black: #000000;
@@ -57,7 +59,6 @@ body {
 
 a {
   text-decoration: none;
-  font-style: normal;
   color: var(--color-navy);
 }
 /* 이름 내 URL 링크 하이라이트 제거 */
@@ -344,44 +345,53 @@ p {
   margin: 30px auto;
 }
 .category__btn {
-  /* text-align: center; */
+  border: 2px solid var(--color-dark-white);
+  position: relative;
+  width: 130px;
   height: 40px;
-  width: 23%;
-  border: 1px solid var(--color-dark-white);
-  border-radius: var(--size-border-radius);
-  font-size: var(--font-semi-regular);
+}
+
+.category__name {
+  font-size: var(--font-small);
+  display: flex;
+  justify-content: center;
+  text-align: center;
 }
 
 @media (max-width: 850px) {
-  .category__btn {
-    font-size: var(--font-small);
+  .category__name {
+    font-size: var(--font-micro);
+    font-weight: var(--font-bold);
   }
+}
+
+.category__count {
+  background-color: var(--color-dark-pink);
+  border-radius: 50%;
+  color: var(--color-white);
+  position: absolute;
+  height: 20px;
+  width: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  opacity: 0;
+  top: -10px;
+  left: -6px;
 }
 
 .category__btn.active,
 .category__btn:hover {
   background-color: var(--color-darkblue);
   color: var(--color-white);
+  transition: all ease var(--animation-duration);
 }
 
 .category__btn.active .category__count,
 .category__btn:hover .category__count {
   opacity: 1;
-}
-
-.category__count {
-  position: relative;
-  font-size: var(--font-micro);
-  background-color: var(--color-navy);
-  border-radius: 50%;
-  color: var(--color-white);
-  top: -2px;
-  height: 17px;
-  width: 17px;
-  display: inline-block;
-  margin-left: 5px;
-  opacity: 0;
-  transition: all var(--animation-duration);
+  transition: all ease var(--animation-duration);
 }
 
 .work__projects {
@@ -395,8 +405,8 @@ p {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 280px;
-  height: 250px;
+  width: 300px;
+  height: 270px;
   margin: 2px;
 }
 
