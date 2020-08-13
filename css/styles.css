@@ -6,6 +6,7 @@ font-family: 'Open Sans', sans-serif; */
   /* Color */
   --color-white: #ffffff;
   --color-light-white: #eeeeee;
+  --color-light-white-hover: #e0dede48;
   --color-dark-white: #d8d8d8;
   --color-light-pink: #fcadaa;
   --color-pink: #fe918d;
@@ -20,7 +21,7 @@ font-family: 'Open Sans', sans-serif; */
   --color-yellow: #fff7d1;
   --color-orange: #feb546;
   --color-black: #000000;
-  --color-black-hover: rgba(0, 0, 0, 0.726);
+  --color-black-hover: rgba(3, 0, 0, 0.623);
 
   /* Font size */
   --font-large: 48px;
@@ -111,32 +112,47 @@ p {
 
 /* Navbar */
 #navbar {
+  position: fixed;
+  width: 100%;
+  /* position fixed를 설정하면 콘텐츠의 크기에 따라 넓이가 적용되기에 재지정 필요 */
   display: flex;
   justify-content: space-between;
-  background-color: var(--color-white);
-  color: var(--color-black);
+  background-color: var(--color-black-hover);
+  color: var(--color-white);
   align-items: center;
   padding: 0px 16px;
+  z-index: 2;
 }
+
+/* JS add */
+#navbar.navbar__dark{
+  transform : translateY(-53px);
+  background-color: transparent;
+  transition: all ease var(--animation-duration);
+  }
+
+  #navbar.navbar__dark:hover{
+    transform : translateY(0px);
+    background-color: var(--color-black-hover);
+  }
 
 .navbar__menu {
   display: flex;
 }
 
 .navbar__logo {
-  background: url(../image/own_logo.png) center/cover;
-  width: 110px;
-  height: 50px;
-  /* color: var(--color-navy);
+
+  color: var(--color-white);
   font-size: var(--font-semi-large);
-  font-weight: var(--weight-semi-bold); */
+  font-weight: var(--weight-bold);
 }
 
-@media (max-width: 850px) {
+/* @media (max-width: 850px) {
   .navbar__logo {
-    font-size: var(--font-regular);
+    width: 75px;
+    height: 45px;
   }
-}
+} */
 
 .navbar__menu__item {
   padding: 5px 12px;
@@ -146,19 +162,38 @@ p {
   font-size: var(--font-small);
   font-weight: var(--weight-semi-bold);
 }
-@media (max-width: 850px) {
+/* @media (max-width: 850px) {
   .navbar__menu__item {
     padding: 5px 7px;
+    font-size: var(--font-micro);
   }
-}
+} */
 
 .navbar__menu__item.active {
-  border-bottom: 1.4px solid var(--color-darkblue);
+  border-bottom: 1.4px solid var(--color-orange);
   border-radius: 5px 5px 0px 0px;
 }
 
 .navbar__menu__item:hover {
-  background-color: var(--color-dark-white);
+  background-color: var(--color-light-white-hover);
+  border-radius: 5px 5px 0px 0px;
+  border-bottom: 1.4px solid var(--color-orange);
+}
+
+/* for mobile, toggle button */
+.navbar__toggle-btn {
+  position : fixed;
+  top: 10px;
+  right: 32px;
+  font-size: 32px;
+  display: none;
+  z-index: 3;
+}
+
+.navbar__toggle-btn i{
+
+  color: var(--color-white);
+
 }
 
 /* Section common */
@@ -177,6 +212,7 @@ p {
 #home {
   background: url("../image/home-background.png") center/cover no-repeat;
   padding: 35px;
+  padding-top : 100px;
   text-align: center;
 }
 
@@ -377,12 +413,15 @@ p {
   text-align: center;
 }
 
-@media (max-width: 850px) {
+/* @media (max-width: 850px) {
+  .work__categories {
+    max-width: 300px;
+  }
   .category__name {
     font-size: var(--font-micro);
     font-weight: var(--font-bold);
   }
-}
+} */
 
 .category__count {
   background-color: var(--color-dark-pink);
@@ -578,3 +617,52 @@ p {
   color: var(--color-white);
   text-shadow: 2px 2px 2px var(--color-dark-grey);
 }
+
+/* 768px screen width */
+@media screen and (max-width: 768px) {
+  .navbar__toggle-btn {
+    display: block;
+    line-height:40px;
+    color: var(--color-navy);
+  }
+  #navbar {
+    flex-direction: column;
+    align-items: flex-start;
+    height : 60px;
+    line-height: 60px;
+  }
+  .navbar__menu {
+    flex-direction: column;
+    text-align: center;
+    width: 100%;
+    display: none;
+  }
+
+  .navbar__menu__item.active {
+    border-bottom: none;
+    background-color: var(--color-light-white-hover);
+    border-radius: 5px 5px 0px 0px;
+  }
+
+  .about__majors {
+    flex-direction: column;
+  }
+  .major {
+    margin: 25px;
+  }
+
+  .skillset {
+    flex-direction: column;
+  }
+
+  .project {
+flex-grow: 1;
+  }
+
+  .project__link {
+    font-size: var(--font-small);
+  }
+  .project__link__contents {
+    width: 110px;
+  }
+

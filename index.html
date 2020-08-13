@@ -15,7 +15,7 @@
       crossorigin="anonymous"
     ></script>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="icon" type="image/png" href="image/favicon.png" />
+    <link rel="icon" href="image/sample.ico" />
     <link rel="stylesheet" href="css/styles.css" />
     <script defer src="main.js"></script>
     <!-- defer옵션은 html이 parsing되는 동안 JS파일을 동시에 다운로드 받아서
@@ -32,6 +32,7 @@
     <!-- Navbar -->
     <nav id="navbar">
       <div class="navbar__logo">
+        <i class="fab fa-audible">AK</i>
       </div>
       <div class="navbar__menu">
         <ul class="navbar__menu">
@@ -43,7 +44,16 @@
           <li class="navbar__menu__item">Contact</li>
         </ul>
       </div>
+        <!-- toggle button -->
+        <button class="navbar__toggle-btn">
+        <i class="fas fa-bars"></i>
+        </button>
     </nav>
+
+
+
+
+
     <!-- Home -->
     <section id="home">
       <img src="image/profile.jpg" alt="Arthur's photo" class="home__photo" />
