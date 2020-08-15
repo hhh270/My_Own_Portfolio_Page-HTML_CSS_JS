@@ -17,3 +17,29 @@ document.addEventListener("scroll", () => {
   }
   //   후 navbar--dark에 대한 스타일링을 css에서 진행
 });
+
+// select navbar menu to move
+const navbarMenu = document.querySelector(".navbar__menu");
+
+// 이벤트 listen 여부 확인
+// navbarMenu.addEventListener(`click`, () => {
+//   console.log("dsf");
+// });
+
+navbarMenu.addEventListener(`click`, (event) => {
+  //   console.log(event.target);
+  //   클릭대상이 콘솔창에 출력
+
+  //   console.log(event.target.dataset.link);
+  //   data-link에 기입한 내용을 dataset.link로 출력 가능.
+
+  const link = event.target.dataset.link;
+  if (link == null) {
+    return;
+    // link가 null이라면 아무것도 출력하지 않음.
+  } else {
+    console.log(event.target.dataset.link);
+    const scrollTo = document.querySelector(link);
+    scrollTo.scrollIntoView({ behavior: "smooth" });
+  }
+});

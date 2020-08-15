@@ -656,7 +656,7 @@ p {
   }
 
   .project {
-flex-grow: 1;
+    flex-grow: 1;
   }
 
   .project__link {
@@ -665,4 +665,3 @@ flex-grow: 1;
   .project__link__contents {
     width: 110px;
   }
-
