@@ -71,6 +71,21 @@ document.addEventListener("scroll", () => {
   home.style.opacity = 1 - window.scrollY / homeHeight;
 });
 
+// add arrow-up mark
+const arrowup = document.querySelector(".arrowup");
+document.addEventListener("scroll", () => {
+  const guage = window.scrollY / homeHeight;
+  arrowup.style.opacity = guage;
+  if (guage + 0.8 >= 1) {
+    arrowup.style.pointerEvents = "auto";
+  } else {
+    arrowup.style.pointerEvents = "none";
+  }
+});
+arrowup.addEventListener("click", () => {
+  scrollIntoView("#home");
+});
+
 // !functions!
 function scrollIntoView(selector) {
   const scrollTo = document.querySelector(selector);
