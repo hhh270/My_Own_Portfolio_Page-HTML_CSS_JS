@@ -1,6 +1,6 @@
 "use strict";
 
-// Make navbar hide/hover
+// !Make navbar hide/hover!
 const navbar = document.querySelector("#navbar");
 const navbarHeight = navbar.getBoundingClientRect().height;
 
@@ -18,7 +18,7 @@ document.addEventListener("scroll", () => {
   //   후 navbar--dark에 대한 스타일링을 css에서 진행
 });
 
-// select navbar menu to move
+// !select navbar menu to move!
 const navbarMenu = document.querySelector(".navbar__menu");
 
 // 이벤트 listen 여부 확인
@@ -38,8 +38,28 @@ navbarMenu.addEventListener(`click`, (event) => {
     return;
     // link가 null이라면 아무것도 출력하지 않음.
   } else {
-    console.log(event.target.dataset.link);
-    const scrollTo = document.querySelector(link);
-    scrollTo.scrollIntoView({ behavior: "smooth" });
+    // console.log(event.target.dataset.link);
+    scrollIntoView(link);
+
+    // const scrollTo = document.querySelector(link);
+    // scrollTo.scrollIntoView({ behavior: "smooth" });
+    // https://developer.mozilla.org/ko/docs/Web/API/Element/scrollIntoView
   }
 });
+
+// !contact me button!
+const contactMe = document.querySelector(".home__contact");
+
+contactMe.addEventListener(`click`, () => {
+  //   console.log("click!");
+  const contactBtn = event.target.dataset.link;
+  scrollIntoView(contactBtn);
+
+  //   const scrollTo = document.querySelector(contactBtn);
+  //   scrollTo.scrollIntoView({ behavior: "smooth" });
+});
+
+function scrollIntoView(selector) {
+  const scrollTo = document.querySelector(selector);
+  scrollTo.scrollIntoView({ behavior: "smooth" });
+}
