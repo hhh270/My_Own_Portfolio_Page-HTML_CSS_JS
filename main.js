@@ -59,6 +59,19 @@ contactMe.addEventListener(`click`, () => {
   //   scrollTo.scrollIntoView({ behavior: "smooth" });
 });
 
+// !Make home's contents fade out.
+const home = document.querySelector(".home__container");
+const homeHeight = home.getBoundingClientRect().height;
+
+document.addEventListener("scroll", () => {
+  //   console.log(`homeHeight: ${homeHeight}`);    663
+
+  // 컨셉) opacity 값을 바로 적용. (1-스크롤px / 홈의 높이)
+  //   console.log(1 - window.scrollY / homeHeight); -> opacity의 값.
+  home.style.opacity = 1 - window.scrollY / homeHeight;
+});
+
+// !functions!
 function scrollIntoView(selector) {
   const scrollTo = document.querySelector(selector);
   scrollTo.scrollIntoView({ behavior: "smooth" });
