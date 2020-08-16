@@ -678,12 +678,6 @@ p {
     display: none;
   }
 
-  .navbar__menu__item.active {
-    border-bottom: none;
-    background-color: var(--color-light-white-hover);
-    border-radius: 5px 5px 0px 0px;
-  }
-
   .about__majors {
     flex-direction: column;
   }

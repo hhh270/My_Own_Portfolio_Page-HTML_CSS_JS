@@ -100,6 +100,13 @@ workBtnContainer.addEventListener(`click`, () => {
   if (filter == null) {
     return;
   }
+  // My works category active 추가/제거.
+  const active = document.querySelector(`.category__btn.active`);
+  active.classList.remove(`active`);
+  const addActive =
+    event.target.nodeName === `BUTTON` ? event.target : event.target.parentNode;
+  addActive.classList.add(`active`);
+
   projectContainer.classList.add(`anim-out`);
   setTimeout(() => {
     projects.forEach((project) => {
@@ -118,23 +125,23 @@ workBtnContainer.addEventListener(`click`, () => {
   }, 280);
 });
 
-// My works category active 추가/제거
+// My works category active 추가/제거(내가 한 방식)
 // const workBtnContainer = document.querySelector(`.work__categories`);
-const catBtn = document.querySelectorAll(`.category__btn`);
-workBtnContainer.addEventListener(`click`, () => {
-  const filter =
-    event.target.dataset.filter || event.target.parentNode.dataset.filter;
-  if (filter == null) {
-    return;
-  }
-  catBtn.forEach((category__btn) => {
-    if (filter === category__btn.dataset.filter) {
-      category__btn.classList.add(`active`);
-    } else {
-      category__btn.classList.remove(`active`);
-    }
-  });
-});
+// const catBtn = document.querySelectorAll(`.category__btn`);
+// workBtnContainer.addEventListener(`click`, () => {
+//   const filter =
+//     event.target.dataset.filter || event.target.parentNode.dataset.filter;
+//   if (filter == null) {
+//     return;
+//   }
+//   catBtn.forEach((category__btn) => {
+//     if (filter === category__btn.dataset.filter) {
+//       category__btn.classList.add(`active`);
+//     } else {
+//       category__btn.classList.remove(`active`);
+//     }
+//   });
+// });
 
 // !functions!
 function scrollIntoView(selector) {
