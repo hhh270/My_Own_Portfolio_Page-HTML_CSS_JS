@@ -118,6 +118,24 @@ workBtnContainer.addEventListener(`click`, () => {
   }, 280);
 });
 
+// My works category active 추가/제거
+// const workBtnContainer = document.querySelector(`.work__categories`);
+const catBtn = document.querySelectorAll(`.category__btn`);
+workBtnContainer.addEventListener(`click`, () => {
+  const filter =
+    event.target.dataset.filter || event.target.parentNode.dataset.filter;
+  if (filter == null) {
+    return;
+  }
+  catBtn.forEach((category__btn) => {
+    if (filter === category__btn.dataset.filter) {
+      category__btn.classList.add(`active`);
+    } else {
+      category__btn.classList.remove(`active`);
+    }
+  });
+});
+
 // !functions!
 function scrollIntoView(selector) {
   const scrollTo = document.querySelector(selector);
