@@ -211,15 +211,18 @@
       <h1>My works</h1>
       <h3 class="work__subtitle">Projects</h3>
       <div class="work__categories">
-        <button class="category__btn active"><span class="category__name">All</span><span class="category__count">7</span></button>
-        <button class="category__btn"><span class="category__name">Front-end</span><span class="category__count">2</span></button>
-        <button class="category__btn"><span class="category__name">Back-end</span><span class="category__count">3</span></button>
-        <button class="category__btn"><span class="category__name">Mobile</span><span class="category__count">3</span></button>
+        <button class="category__btn active" data-filter="*">
+          <span class="category__name">All</span>
+          <span class="category__count">7</span>
+        </button>
+        <button class="category__btn" data-filter="front-end"><span class="category__name">Front-end</span><span class="category__count">2</span></button>
+        <button class="category__btn" data-filter="back-end"><span class="category__name">Back-end</span><span class="category__count">3</span></button>
+        <button class="category__btn" data-filter="mobile"><span class="category__name">Mobile</span><span class="category__count">3</span></button>
       </div>
 
       <div class="work__projects">
 
-        <div class="project">
+        <div class="project" data-type="front-end">
           <img class="project__img"  src="image/projects/project1.png" alt="~~~ site"/>
           <div class="project__description">
             <h3>Portfolio Web-site </br> (HTML, CSS, JS)</h3>
@@ -235,7 +238,7 @@
         <!-- project1 -->
 
 
-        <div class="project">
+        <div class="project" data-type="front-end">
           <img class="project__img"  src="image/projects/sample.jpg" alt="~~~ site"/>
           <div class="project__description">
             <h3>Web-scraper </br> (Python)</h3>
@@ -251,7 +254,7 @@
         <!-- project2 -->
 
 
-        <div class="project">
+        <div class="project" data-type="back-end">
           <img class="project__img"  src="image/projects/sample.jpg" alt="~~~ site"/>
           <div class="project__description">
             <h3>Bulletin-board </br> (HTML, CSS, JS, Java)</h3>
@@ -267,7 +270,7 @@
         <!-- project3 -->
 
 
-        <div class="project">
+        <div class="project" data-type="front-end">
           <img class="project__img"  src="image/projects/sample.jpg" alt="~~~ site"/>
           <div class="project__description">
             <h3>Snake-game </br> (Java)</h3>
@@ -283,7 +286,7 @@
         <!-- project4 -->
 
 
-        <div class="project">
+        <div class="project" data-type="back-end">
           <img class="project__img" src="image/projects/sample.jpg" alt="~~~ site"/>
           <div class="project__description">
             <h3>Socket communication </br> (Java)</h3>
@@ -299,7 +302,7 @@
         <!-- project5 -->
 
 
-        <div class="project">
+        <div class="project" data-type="mobile">
           <img class="project__img" src="image/projects/sample.jpg" alt="~~~ site"/>
           <div class="project__description">
             <h3>Chip8-interpreter </br> (Python)</h3>
@@ -315,7 +318,7 @@
         <!-- project6 -->
 
 
-        <div class="project">
+        <div class="project" data-type="back-end">
           <img class="project__img" src="image/projects/sample.jpg" alt="~~~ site"/>
           <div class="project__description">
             <h3>Rest-API </br> (Node.JS)</h3>
@@ -331,7 +334,7 @@
         <!-- project7 -->
 
 
-        <div class="project">
+        <div class="project" data-type="mobile">
           <img class="project__img" src="image/projects/sample.jpg" alt="~~~ site"/>
           <div class="project__description">
             <h3>Zoom clone </br> (Node.JS)</h3>

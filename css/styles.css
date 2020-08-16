@@ -454,6 +454,13 @@ p {
   flex-wrap: wrap;
   justify-content: center;
   margin-bottom: 100px;
+  opacity: 1;
+  transition: all ease-out var(--animation-duration);
+}
+
+.work__projects.anim-out {
+  opacity: 0;
+  transform: scale(0.9) translateY(23px);
 }
 
 .project {
@@ -465,6 +472,10 @@ p {
   width: 300px;
   height: 270px;
   margin: 2px;
+}
+
+.project.invisible {
+  display: none;
 }
 
 .project__img {
