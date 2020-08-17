@@ -391,6 +391,11 @@ p {
   margin: 30px auto;
 }
 
+.work__projects {
+  max-width: 1200px;
+  margin: auto;
+}
+
 .work__subtitle {
   font-weight: var(--weight-semi-bold);
 }
@@ -469,8 +474,13 @@ p {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 300px;
-  height: 270px;
+
+  width: 350px;
+  height: 320px;
+
+  /*below option is for 8 projects.
+   width: 300px;
+  height: 270px; */
   margin: 2px;
 }
 
