@@ -689,7 +689,15 @@ p {
     flex-direction: column;
   }
 
+  .work__categories {
+    max-width: 400px;
+  }
+  .category__btn {
+    margin: 1px;
+  }
+
   .project {
+    max-width: 400px;
     flex-grow: 1;
     /* https://developer.mozilla.org/ko/docs/Web/CSS/flex-grow */
   }
