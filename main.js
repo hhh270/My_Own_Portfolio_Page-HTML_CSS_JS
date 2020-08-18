@@ -47,6 +47,16 @@ navbarMenu.addEventListener(`click`, (event) => {
   }
 });
 
+// navbar toggle button for small screen
+const navbarToggleBtn = document.querySelector(`.navbar__toggle-btn`);
+//위에서 정의함 const navbarMenu = document.querySelector(".navbar__menu");
+navbarToggleBtn.addEventListener(`click`, () => {
+  navbarMenu.classList.toggle(`open`);
+  navbarMenu.addEventListener(`click`, () => {
+    navbarMenu.classList.remove(`open`);
+  });
+});
+
 // !contact me button!
 const contactMe = document.querySelector(".home__contact");
 

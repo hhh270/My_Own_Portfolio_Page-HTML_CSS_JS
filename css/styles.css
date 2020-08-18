@@ -539,7 +539,7 @@ p {
   margin: auto;
   margin-top: 10px;
   width: 50%;
-  height: 1px;
+  height: 2px;
   background-color: var(--color-white);
 }
 
@@ -681,11 +681,23 @@ p {
     height: 60px;
     line-height: 60px;
   }
+  .navbar__menu.open {
+    display: block;
+  }
   .navbar__menu {
+    border: 2px solid var(--color-white);
+    background-color: var(--color-black-hover);
     flex-direction: column;
     text-align: center;
+    height: 300px;
+    padding-bottom: 2px;
     width: 100%;
     display: none;
+  }
+
+  .navbar__menu__item {
+    height: 50px;
+    line-height: 40px;
   }
 
   .about__majors {
